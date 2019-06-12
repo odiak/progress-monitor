@@ -6,7 +6,8 @@
   "author": "Kaido Iwamoto <h6824.kaido@gmail.com>",
   "homepage": "https://github.com/odiak/progress-monitor",
   "scripts": {
-    "build": "tsc && webpack --mode production"
+    "build": "tsc && webpack --mode production",
+    "prepare": "$npm_execpath run build"
   },
   "files": [
     "bin",
