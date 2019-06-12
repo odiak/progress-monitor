@@ -9,7 +9,7 @@ const config: webpack.Configuration = {
     extensions: ['.ts', '.tsx', '.js']
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist-client'),
     filename: 'bundle.js'
   },
   module: {
