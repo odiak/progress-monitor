@@ -1,12 +1,9 @@
 import { server as WebSocketServer, connection } from 'websocket'
 import { createServer } from 'http'
-import webpack from 'webpack'
-import middleware from 'webpack-dev-middleware'
 import connect from 'connect'
 import getPort from 'get-port'
 import { createInterface } from 'readline'
 import yargs from 'yargs'
-import config from '../webpack.config'
 import address from 'address'
 import serveStatic from 'serve-static'
 import path from 'path'
@@ -47,13 +44,18 @@ function sendJSON(connection: connection, object: unknown) {
 const app = connect()
 
 if (process.env.DEV) {
-  const compiler = webpack(config)
-  app.use(
-    middleware(compiler, {
-      publicPath: '/',
-      logLevel: 'warn'
-    })
-  )
+  ;(async () => {
+    const webpack = (await import('webpack')).default
+    const middleware = (await import('webpack-dev-middleware')).default
+    const config = (await import('../webpack.config')).default
+    const compiler = webpack(config)
+    app.use(
+      middleware(compiler, {
+        publicPath: '/',
+        logLevel: 'warn'
+      })
+    )
+  })()
 } else {
   app.use(serveStatic(path.resolve(__dirname, '../dist-client'), {
     index: ['index.html']
