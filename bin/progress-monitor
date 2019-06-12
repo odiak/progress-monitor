@@ -9,5 +9,5 @@ npm_bin="$(npm bin)"
 if [ -d "src" ]; then
     $npm_bin/ts-node src/index.ts "$@"
 else
-    node dist/index.js "$@"
+    node dist/src/index.js "$@"
 fi
