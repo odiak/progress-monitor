@@ -58,6 +58,7 @@ export const ProgressMonitor = () => {
             const baseHeight = 200
             const legendHeight = multipleKeys ? 36 : 0
             const height = baseHeight + legendHeight
+            const colors = keys.map((_, i) => color(i, keys.length))
             return (
               <div key={j}>
                 <h3>{m.name}</h3>
@@ -72,8 +73,14 @@ export const ProgressMonitor = () => {
                     <CartesianGrid vertical={false} />
                     <Tooltip />
                     {multipleKeys && <Legend verticalAlign="top" height={legendHeight} />}
-                    {keys.map((key) => (
-                      <Line key={key} dataKey={key} dot={false} isAnimationActive={false} />
+                    {keys.map((key, i) => (
+                      <Line
+                        key={key}
+                        dataKey={key}
+                        dot={false}
+                        isAnimationActive={false}
+                        stroke={colors[i]}
+                      />
                     ))}
                   </LineChart>
                 </LazyLoad>
@@ -108,6 +115,11 @@ function addProgresses(progresses: Progresses, ...newProgresses: ProgressMessage
       }
     }
   })
+}
+
+function color(i: number, n: number): string {
+  const h = Math.floor((360 * i) / n)
+  return `hsl(${h},50%,50%)`
 }
 
 ReactDOM.render(<ProgressMonitor />, document.getElementById('app'))
