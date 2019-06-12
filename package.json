@@ -1,7 +1,7 @@
 {
   "name": "@odiak/progress-monitor",
   "description": "Simple progress monitor for any programs",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "MIT",
   "author": "Kaido Iwamoto <h6824.kaido@gmail.com>",
   "homepage": "https://github.com/odiak/progress-monitor",
