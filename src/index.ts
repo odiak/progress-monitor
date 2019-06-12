@@ -65,7 +65,9 @@ if (process.env.DEV) {
 const server = createServer(app)
 
 const portPromise =
-  argv.port == null ? getPort({ port: getPort.makeRange(9000, 11000) }) : Promise.resolve(argv.port)
+  argv.port == null
+    ? getPort({ port: getPort.makeRange(9000, 11000), host: argv.host })
+    : Promise.resolve(argv.port)
 portPromise.then((port) => {
   server.listen(port, argv.host, () => {
     let addressToShow: string
