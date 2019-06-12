@@ -1,6 +1,12 @@
 #!/bin/bash
 
-cd "$(dirname $0)"
+p="$0"
+if [ -L "$p" ]; then
+    cd "$(dirname $p)"
+    p="$(readlink -n $p)"
+fi
+
+cd "$(dirname $p)"
 cd ..
 
 npm_bin="$(npm bin)"
