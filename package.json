@@ -5,6 +5,11 @@
   "scripts": {
     "build": "tsc && webpack --mode production"
   },
+  "files": [
+    "dist",
+    "dist-client"
+  ],
+  "bin": "bin/progress-monitor",
   "dependencies": {
     "address": "github:ratson/address#35a09ed482d7c7d21686cfbab331c7b9b0e215a9",
     "connect": "^3.7.0",
