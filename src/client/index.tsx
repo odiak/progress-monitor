@@ -14,7 +14,7 @@ type Progresses = ReadonlyArray<
         values: ReadonlyArray<Readonly<{ epoch: number; [key: string]: number }>>
       }>
     >
-    numEpochs: number
+    numEpochs: number | undefined
   }>
 >
 
@@ -23,7 +23,7 @@ interface ProgressMessage {
   metrics: string
   value: number | { [key: string]: number }
   epoch: number
-  n_epochs: number
+  n_epochs?: number
 }
 
 type Meta = Readonly<{ title: string }>
@@ -63,7 +63,11 @@ export const ProgressMonitor = () => {
                 <h3>{m.name}</h3>
                 <LazyLoad height={height}>
                   <LineChart width={500} height={height} data={m.values as object[]}>
-                    <XAxis dataKey="epoch" type="number" domain={[0, p.numEpochs]} />
+                    <XAxis
+                      dataKey="epoch"
+                      type="number"
+                      domain={p.numEpochs != null ? [0, p.numEpochs] : undefined}
+                    />
                     <YAxis domain={['auto', 'auto']} />
                     <CartesianGrid vertical={false} />
                     <Tooltip />

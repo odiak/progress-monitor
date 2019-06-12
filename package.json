@@ -2,6 +2,9 @@
   "name": "@odiak/progress-monitor",
   "version": "0.0.0",
   "license": "MIT",
+  "scripts": {
+    "build": "tsc && webpack --mode production"
+  },
   "dependencies": {
     "@types/connect": "^3.4.32",
     "@types/html-webpack-plugin": "^3.2.0",
@@ -10,11 +13,12 @@
     "@types/react-dom": "^16.8.4",
     "@types/react-lazyload": "^2.5.0",
     "@types/recharts": "^1.1.16",
+    "@types/serve-static": "^1.13.2",
     "@types/webpack": "^4.4.32",
     "@types/webpack-dev-middleware": "^2.0.2",
     "@types/websocket": "^0.0.40",
     "@types/yargs": "^13.0.0",
-    "address": "^1.1.0",
+    "address": "github:ratson/address#35a09ed482d7c7d21686cfbab331c7b9b0e215a9",
     "connect": "^3.7.0",
     "get-port": "^5.0.0",
     "html-webpack-plugin": "^3.2.0",
@@ -23,6 +27,7 @@
     "react-dom": "^16.8.6",
     "react-lazyload": "^2.6.1",
     "recharts": "^1.6.2",
+    "serve-static": "^1.14.1",
     "ts-loader": "^6.0.2",
     "ts-node": "^8.2.0",
     "typescript": "^3.5.1",
@@ -32,6 +37,7 @@
     "yargs": "^13.2.4"
   },
   "devDependencies": {
-    "prettier": "^1.18.2"
+    "prettier": "^1.18.2",
+    "webpack-cli": "^3.3.4"
   }
 }

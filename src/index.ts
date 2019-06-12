@@ -8,6 +8,8 @@ import { createInterface } from 'readline'
 import yargs from 'yargs'
 import config from '../webpack.config'
 import address from 'address'
+import serveStatic from 'serve-static'
+import path from 'path'
 
 const { argv } = yargs
   .option('port', { alias: 'p', default: null as number | null, number: true })
@@ -42,10 +44,21 @@ function sendJSON(connection: connection, object: unknown) {
   connection.sendUTF(JSON.stringify(object))
 }
 
-const compiler = webpack(config)
-
 const app = connect()
-app.use(middleware(compiler))
+
+if (process.env.DEV) {
+  const compiler = webpack(config)
+  app.use(
+    middleware(compiler, {
+      publicPath: '/',
+      logLevel: 'warn'
+    })
+  )
+} else {
+  app.use(serveStatic(path.resolve(__dirname, '../dist-client'), {
+    index: ['index.html']
+  }) as connect.HandleFunction)
+}
 
 const server = createServer(app)
 
