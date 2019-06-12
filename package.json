@@ -1,0 +1,32 @@
+{
+  "name": "@odiak/progress-monitor",
+  "version": "0.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "@types/connect": "^3.4.32",
+    "@types/html-webpack-plugin": "^3.2.0",
+    "@types/node": "^12.0.7",
+    "@types/react": "^16.8.19",
+    "@types/react-dom": "^16.8.4",
+    "@types/webpack": "^4.4.32",
+    "@types/webpack-dev-middleware": "^2.0.2",
+    "@types/websocket": "^0.0.40",
+    "@types/yargs": "^13.0.0",
+    "address": "^1.1.0",
+    "connect": "^3.7.0",
+    "get-port": "^5.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "ts-loader": "^6.0.2",
+    "ts-node": "^8.2.0",
+    "typescript": "^3.5.1",
+    "webpack": "^4.33.0",
+    "webpack-dev-middleware": "^3.7.0",
+    "websocket": "^1.0.28",
+    "yargs": "^13.2.4"
+  },
+  "devDependencies": {
+    "prettier": "^1.18.2"
+  }
+}
