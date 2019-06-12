@@ -3,7 +3,7 @@
 p="$0"
 if [ -L "$p" ]; then
     cd "$(dirname $p)"
-    p="$(readlink -n $p)"
+    p="$(readlink -n $(basename $p))"
 fi
 
 cd "$(dirname $p)"
