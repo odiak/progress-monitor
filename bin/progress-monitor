@@ -1,0 +1,13 @@
+#!/bin/bash
+
+cd "$(dirname $0)"
+cd ..
+
+npm_bin="$(npm bin)"
+
+# in case during development or installed from git
+if [ -d "src" ]; then
+    $npm_bin/ts-node src/index.ts "$@"
+else
+    node dist/index.js "$@"
+fi
