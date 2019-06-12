@@ -376,9 +376,9 @@ acorn@^6.0.5:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.1.1.tgz#7d25ae05bb8ad1f9b699108e1094ecd7884adc1f"
   integrity sha512-jPTiwtOxaHNaAPg/dmrJ/beuzLRnXtB0kQPQ8JpotKJgTB6rX6c8mlf315941pyjBSaPg8NHXS9fhP4u17DpGA==
 
-"address@github:ratson/address#35a09ed482d7c7d21686cfbab331c7b9b0e215a9":
+"address@git+https://github.com/ratson/address#35a09ed482d7c7d21686cfbab331c7b9b0e215a9":
   version "1.1.0"
-  resolved "https://codeload.github.com/ratson/address/tar.gz/35a09ed482d7c7d21686cfbab331c7b9b0e215a9"
+  resolved "git+https://github.com/ratson/address#35a09ed482d7c7d21686cfbab331c7b9b0e215a9"
 
 ajv-errors@^1.0.0:
   version "1.0.1"
