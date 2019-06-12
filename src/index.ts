@@ -57,7 +57,8 @@ if (process.env.DEV) {
     )
   })()
 } else {
-  app.use(serveStatic(path.resolve(__dirname, '../dist-client'), {
+  const staticPath = /\.js$/.test(__filename) ? '../../dist-client' : '../dist-client'
+  app.use(serveStatic(path.resolve(__dirname, staticPath), {
     index: ['index.html']
   }) as connect.HandleFunction)
 }
