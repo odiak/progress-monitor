@@ -1,18 +1,18 @@
 # Progress Monitor
 
-Simple progress monitor for any programs.
+This is a simple tool that visualize progress of any program on browser.
+
+## Example
+
+![](https://i.gyazo.com/9f01b7b554f9b9034a20ba7309be548a.png)
 
 ## How to use
 
-Install via GitHub.
+```bash
+# Install
+npm install -g @odiak/progress-monitor
 
-```console
-npm install github:odiak/progress-monitor
-```
-
-Execute with pipe.
-
-```console
+# Execute with pipe
 your-program | progress-monitor
 ```
 
@@ -39,3 +39,7 @@ Format of JSON to output is [here](https://github.com/odiak/progress-monitor/blo
   "n_epochs": 400
 }
 ```
+
+## License
+
+MIT
