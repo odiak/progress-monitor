@@ -14,6 +14,8 @@ npm install -g @odiak/progress-monitor
 
 # Execute with pipe
 your-program | progress-monitor
+
+# Open printed URL on your browser to see progress
 ```
 
 All you need to do is let your program to print JSON in one line on each step of process.
